@@ -10,15 +10,23 @@
     },
     "research": {
       "description": "Web research and information gathering",
-      "mcpServers": ["context7", "sequential-thinking"]
+      "mcpServers": ["exa", "context7", "sequential-thinking"]
+    },
+    "meeting-notes": {
+      "description": "Meeting notes (audio transcription + knowledge management)",
+      "mcpServers": ["whisper", "notebooklm-mcp", "filesystem"]
     },
     "communication": {
-      "description": "Slack and project management",
-      "mcpServers": ["slack", "linear"]
+      "description": "Slack, calendar, and project management",
+      "mcpServers": ["slack", "google-calendar", "linear"]
     },
     "design": {
       "description": "Figma design + browser preview",
       "mcpServers": ["figma", "playwright"]
+    },
+    "automation": {
+      "description": "Workflow automation with n8n",
+      "mcpServers": ["n8n-mcp", "filesystem"]
     },
     "full": {
       "description": "All MCPs enabled",

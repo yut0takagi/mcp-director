@@ -95,6 +95,71 @@
         "url": "https://mcp.linear.app/mcp"
       },
       "weight": "medium"
+    },
+    "whisper": {
+      "description": "Audio file transcription using Whisper",
+      "category": "Audio & Media",
+      "keywords": ["transcribe", "audio", "whisper", "recording", "speech", "文字起こし", "音声", "録音"],
+      "capabilities": ["Audio transcription", "Model management"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "@anthropic-ai/mcp-whisper"]
+      },
+      "weight": "light"
+    },
+    "notebooklm-mcp": {
+      "description": "Google NotebookLM integration for knowledge management",
+      "category": "Knowledge",
+      "keywords": ["notebook", "NotebookLM", "source", "audio", "ノートブック", "ソース追加", "音声生成", "議事録"],
+      "capabilities": ["Notebook management", "Source management", "Audio/video generation"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "notebooklm-mcp"]
+      },
+      "weight": "medium"
+    },
+    "exa": {
+      "description": "AI-powered semantic web search",
+      "category": "Search & Research",
+      "keywords": ["search", "web", "research", "semantic", "検索", "Web検索", "リサーチ", "調査"],
+      "capabilities": ["Semantic search", "Web search"],
+      "config": {
+        "url": "https://mcp.exa.ai/mcp"
+      },
+      "weight": "light"
+    },
+    "google-calendar": {
+      "description": "Google Calendar event management",
+      "category": "Schedule",
+      "keywords": ["calendar", "event", "schedule", "meeting", "カレンダー", "予定", "スケジュール", "会議"],
+      "capabilities": ["List events", "Create events", "Check availability"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "@anthropic-ai/mcp-google-calendar"]
+      },
+      "weight": "medium"
+    },
+    "screenpipe": {
+      "description": "Screen and audio recording with search",
+      "category": "Audio & Media",
+      "keywords": ["screen", "recording", "activity", "meeting", "画面録画", "音声録音", "アクティビティ"],
+      "capabilities": ["Screen search", "Audio search", "Activity summary"],
+      "config": {
+        "command": "screenpipe",
+        "args": ["mcp"]
+      },
+      "weight": "heavy"
+    },
+    "n8n-mcp": {
+      "description": "n8n workflow search and validation",
+      "category": "Automation",
+      "keywords": ["n8n", "workflow", "automation", "node", "ワークフロー", "自動化", "ノード"],
+      "capabilities": ["Node search", "Template search", "Validation"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "n8n-mcp"]
+      },
+      "weight": "light"
     }
   }
 }
