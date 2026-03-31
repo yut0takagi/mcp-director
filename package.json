@@ -1,6 +1,6 @@
 {
   "name": "mcp-director",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Lightweight MCP server that recommends and manages MCP profiles for Claude Code",
   "type": "module",
   "bin": {
