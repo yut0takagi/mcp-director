@@ -1,0 +1,22 @@
+{
+  "name": "mcp-director",
+  "version": "0.1.0",
+  "description": "Lightweight MCP server that recommends and manages MCP profiles for Claude Code",
+  "type": "module",
+  "bin": {
+    "mcp-director": "./src/server.js"
+  },
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/"
+  },
+  "keywords": ["mcp", "claude-code", "profile-manager"],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
