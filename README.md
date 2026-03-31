@@ -12,7 +12,7 @@ Claude Code loads all configured MCP servers at session start. With 20+ MCPs, st
 
 ## Install
 
-Add to your `.mcp.json`:
+Add `mcp-director` to your project's `.mcp.json` (create the file in your project root if it doesn't exist):
 
 ```json
 {
@@ -25,18 +25,48 @@ Add to your `.mcp.json`:
 }
 ```
 
-## Quick Start
+Then start (or restart) your Claude Code session. `mcp-director` will be available as an MCP tool.
 
-1. **Initialize** — Import your existing MCPs into the director catalog:
-   > "Run the init tool"
+> **Note:** No global install needed. `npx` downloads and runs it automatically.
 
-2. **Get recommendations** — Ask what MCPs you need:
-   > "I want to create meeting notes" → recommends whisper, notebooklm-mcp
+## Usage
 
-3. **Switch profiles** — Apply a profile to slim down your `.mcp.json`:
-   > "Apply the development profile" → keeps only github, context7, playwright
+Once Claude Code starts with `mcp-director` configured, just talk to Claude naturally:
 
-4. **Restart session** — Changes take effect on next session start.
+### 1. Initialize — Import your existing MCPs
+
+> "Run the init tool"
+
+This reads your current `.mcp.json` and imports all MCPs into `.mcp-director/catalog.json` so the director knows about them.
+
+### 2. Get recommendations
+
+> "I want to create meeting notes"
+
+Claude will call `recommend` and suggest relevant MCPs (e.g. whisper, notebooklm-mcp) along with matching profiles.
+
+> "I need to do some web research"
+
+Use `smart` mode for LLM-assisted matching:
+> "Recommend MCPs for building a dashboard, use smart mode"
+
+### 3. Switch profiles
+
+> "Apply the development profile"
+
+This rewrites your `.mcp.json` to only include github, context7, and playwright. A backup is saved as `.mcp.json.bak`.
+
+> "Show me what the design profile would look like" (dry-run)
+
+### 4. Restart session
+
+Changes to `.mcp.json` take effect on the **next** Claude Code session start.
+
+### 5. Create custom profiles
+
+> "Create a profile called 'data-work' with filesystem and sequential-thinking"
+
+> "Add exa to the research profile"
 
 ## Tools
 
@@ -54,14 +84,26 @@ Add to your `.mcp.json`:
 
 Built-in profiles:
 
-- **minimal** — Director only
-- **development** — GitHub + Context7 + Playwright
-- **research** — Context7 + Sequential Thinking
-- **communication** — Slack + Linear
-- **design** — Figma + Playwright
-- **full** — All MCPs enabled
+| Profile | MCPs |
+|---------|------|
+| **minimal** | Director only |
+| **development** | GitHub + Context7 + Playwright |
+| **research** | Exa + Context7 + Sequential Thinking |
+| **meeting-notes** | Whisper + NotebookLM + Filesystem |
+| **communication** | Slack + Google Calendar + Linear |
+| **design** | Figma + Playwright |
+| **automation** | n8n + Filesystem |
+| **full** | All MCPs enabled |
 
 Create your own with `create_profile`.
+
+## Bundled Catalog
+
+16 popular MCPs are included out of the box:
+
+`github` `playwright` `context7` `memory` `filesystem` `sequential-thinking` `slack` `figma` `linear` `whisper` `notebooklm-mcp` `exa` `google-calendar` `screenpipe` `n8n-mcp`
+
+Add your own MCPs by running `init` or editing `.mcp-director/catalog.json`.
 
 ## How It Works
 
