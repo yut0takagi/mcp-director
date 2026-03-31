@@ -1,0 +1,28 @@
+{
+  "profiles": {
+    "minimal": {
+      "description": "Minimal — Director only",
+      "mcpServers": []
+    },
+    "development": {
+      "description": "Code development (GitHub + docs + browser testing)",
+      "mcpServers": ["github", "context7", "playwright"]
+    },
+    "research": {
+      "description": "Web research and information gathering",
+      "mcpServers": ["context7", "sequential-thinking"]
+    },
+    "communication": {
+      "description": "Slack and project management",
+      "mcpServers": ["slack", "linear"]
+    },
+    "design": {
+      "description": "Figma design + browser preview",
+      "mcpServers": ["figma", "playwright"]
+    },
+    "full": {
+      "description": "All MCPs enabled",
+      "mcpServers": ["ALL"]
+    }
+  }
+}

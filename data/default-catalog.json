@@ -1,0 +1,100 @@
+{
+  "mcpServers": {
+    "github": {
+      "description": "GitHub API integration (PR, Issue, repository operations)",
+      "category": "Development",
+      "keywords": ["github", "PR", "issue", "repository", "code", "リポジトリ", "コード"],
+      "capabilities": ["PR creation", "Issue management", "Code search", "File operations"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-github"]
+      },
+      "weight": "medium"
+    },
+    "playwright": {
+      "description": "Browser automation, testing, and screenshots",
+      "category": "Web & Browser",
+      "keywords": ["browser", "test", "screenshot", "web", "playwright", "ブラウザ", "テスト", "スクリーンショット"],
+      "capabilities": ["Page navigation", "Click", "Input", "Screenshot"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "@playwright/mcp@latest", "--extension"]
+      },
+      "weight": "heavy"
+    },
+    "context7": {
+      "description": "Up-to-date library and framework documentation search",
+      "category": "Development",
+      "keywords": ["documentation", "API", "library", "docs", "ドキュメント", "ライブラリ"],
+      "capabilities": ["Documentation search", "Code examples"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "@upstash/context7-mcp@latest"]
+      },
+      "weight": "light"
+    },
+    "memory": {
+      "description": "Persistent memory and knowledge graph management",
+      "category": "Knowledge",
+      "keywords": ["memory", "knowledge", "graph", "entity", "メモリ", "記憶", "ナレッジ"],
+      "capabilities": ["Entity management", "Relation management", "Search"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-memory"]
+      },
+      "weight": "light"
+    },
+    "filesystem": {
+      "description": "Local filesystem read/write operations",
+      "category": "File Operations",
+      "keywords": ["file", "directory", "read", "write", "ファイル", "ディレクトリ"],
+      "capabilities": ["File read/write", "Directory operations", "Search"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+      },
+      "weight": "light"
+    },
+    "sequential-thinking": {
+      "description": "Step-by-step reasoning for complex problems",
+      "category": "Reasoning",
+      "keywords": ["analysis", "reasoning", "thinking", "complex", "分析", "推論", "思考"],
+      "capabilities": ["Step-by-step reasoning", "Complex analysis"],
+      "config": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+      },
+      "weight": "light"
+    },
+    "slack": {
+      "description": "Slack workspace search and messaging",
+      "category": "Communication",
+      "keywords": ["slack", "message", "channel", "メッセージ", "チャンネル", "通知"],
+      "capabilities": ["Send messages", "Search channels", "Search messages"],
+      "config": {
+        "url": "https://mcp.slack.com/mcp"
+      },
+      "weight": "medium"
+    },
+    "figma": {
+      "description": "Figma design retrieval and operations",
+      "category": "Design",
+      "keywords": ["figma", "design", "UI", "component", "デザイン", "コンポーネント"],
+      "capabilities": ["Design retrieval", "Screenshot", "Code Connect"],
+      "config": {
+        "url": "https://mcp.figma.com/mcp"
+      },
+      "weight": "medium"
+    },
+    "linear": {
+      "description": "Linear issue and project management",
+      "category": "Project Management",
+      "keywords": ["linear", "issue", "task", "project", "イシュー", "タスク", "プロジェクト管理"],
+      "capabilities": ["Issue creation", "Project management", "Document search"],
+      "config": {
+        "url": "https://mcp.linear.app/mcp"
+      },
+      "weight": "medium"
+    }
+  }
+}
